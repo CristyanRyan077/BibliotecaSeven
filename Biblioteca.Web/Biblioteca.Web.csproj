@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Biblioteca.API\Biblioteca.API.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Imagens\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,4 @@
-﻿
+﻿@model Biblioteca.Web.ViewModels.LoginViewModel
 @section Styles {
     <link rel="stylesheet" href="~/css/Login.css" />
 }
@@ -18,8 +18,8 @@
                     <button type="submit" class="opacity btn-s">Entrar</button>
                 </form>
                 <div class="register-forget opacity">
-                    <a asp-controller="Sessao" asp-action="Registrar"> Registrar</a>
-                    <a asp-controller="Sessao" asp-action="NovaSenha">Esqueci a senha</a>
+                    <a asp-controller="Conta" asp-action="Registrar"> Registrar</a>
+                    <a asp-controller="Conta" asp-action="NovaSenha">Esqueci a senha</a>
                 </div>
             </div>
             <div class="circle circle-two"></div>

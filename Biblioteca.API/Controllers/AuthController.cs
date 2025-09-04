@@ -50,6 +50,7 @@ namespace Biblioteca.API.Controllers
             {
                 Username = dto.Username,
                 Email = dto.Email,
+                Telefone = dto.Telefone,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password)
             };
 

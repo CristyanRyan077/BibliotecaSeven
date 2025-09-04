@@ -20,13 +20,11 @@ namespace Biblioteca.Data.Models
         [Required]
         [Column(TypeName = "varchar(20)")]
         public string ISBN { get; set; } = "";
-
+        public string? ImagemUrl { get; set; }
         public DateTime DataPublicacao { get; set; }
         public int QuantidadeDisponivel { get; set; }
-
-        // FK Autor
-        public int AutorId { get; set; }
-        public Autor Autor { get; set; } = null!;
+        [Required]
+        public string Autor { get; set; } = "";
 
         // FK Categoria 
         public int? CategoriaId { get; set; }

@@ -1,3 +1,4 @@
+using Auth.Core.Extensions;
 using Biblioteca.Data.Database;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,10 @@ builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Data Source=2857AL17;Initial Catalog=BibliotecaDB;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession();
+builder.Services.AddJwtAuthentication(builder.Configuration);
 
 var app = builder.Build();
 
@@ -26,6 +31,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Conta}/{action=Login}/{id?}");
 
 app.Run();

@@ -1,4 +1,4 @@
-﻿@model ControleFinanceiro.Web.Models.RegistrarViewModel
+﻿@model Biblioteca.Web.ViewModels.RegistrarViewModel
 @section Styles {
     <link rel="stylesheet" href="~/css/Login.css" />
 }
@@ -16,11 +16,12 @@
                 <form method="post">
                     <input type="text" asp-for="Username" placeholder="Usuário" />
                     <input type="email" asp-for="Email" placeholder="Email" />
+                    <input type="text" asp-for="Telefone" placeholder="Telefone" />
                     <input type="password" asp-for="Password" placeholder="Senha" />
                     <button type="submit" class="opacity btn-s">Entrar</button>
                 </form>
                 <div class="register-forget opacity">
-                    <a asp-controller="Sessao" asp-action="Login"> Login</a>
+                    <a asp-controller="Conta" asp-action="Login"> Login</a>
                 </div>
             </div>
             <div class="circle circle-two"></div>
