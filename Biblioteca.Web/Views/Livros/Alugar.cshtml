@@ -1,0 +1,43 @@
+﻿@using Biblioteca.Web.ViewModels
+@model AluguelViewModel
+
+@{
+    ViewData["Title"] = "Alugar Livro";
+}
+
+@section Styles {
+   <link rel="stylesheet" href="~/css/Alugar.css" />
+}
+<div class="alugar-container">
+    <div class="livro-info">
+        <img src="@Model.ImagemLivro" alt="@Model.TituloLivro" />
+        <h2>@Model.TituloLivro</h2>
+        <p><strong>Autor:</strong> @Model.Autor</p>
+        <p><strong>Categoria:</strong> @Model.Categoria</p>
+    </div>
+
+    <div class="form-alugar">
+        <h3>Alugar este livro</h3>
+        <form asp-action="Alugar">
+            <input type="hidden" asp-for="LivroId" />
+
+            <div class="form-group">
+                <label asp-for="DataLocacao">Data de Locação</label>
+                <input asp-for="DataLocacao" type="date" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DataDevolucaoPrevista">Data de Devolução Prevista</label>
+                <input asp-for="DataDevolucaoPrevista" type="date" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Usuário</label>
+                <p class="form-control">@Model.UsuarioNome</p>
+                <input type="hidden" asp-for="UsuarioId" />
+            </div>
+
+            <button type="submit" class="btn-submit">Confirmar Aluguel</button>
+        </form>
+    </div>
+</div>

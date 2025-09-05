@@ -12,7 +12,7 @@ namespace Biblioteca.Data.Models
     {
         public int Id { get; set; } // chave primária
         public DateTime DataLocacao { get; set; }
-        public DateTime DataDevolucaoReal { get; set; }
+        public DateTime? DataDevolucaoReal { get; set; }
         public DateTime DataDevolucaoPrevista { get; set; }
         public int LivroId { get; set; } // FK_Livro_Aluguel
         public int UsuarioId { get; set; } // FK_Usuario_Aluguel
